@@ -6,4 +6,4 @@
 pages. Eventually, make sure the survey can submit the data
 somewhere, whether via email or stored in a database.</P> 
 
-<p> 🛠 <b> Tools Used: HTML, CSS, Bootsrap</b> </p>
+<p> 🛠 <b> Tools Used: </b> HTML, CSS, Bootsrap</p>
