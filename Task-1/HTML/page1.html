@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lalezar&family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload = "loadData()">
     <div class="containter text-light">
         <h1 class="text-center mt-5" style="font-size: 50px;"><b> Student Survey </b> </h1>
         <center>
@@ -28,190 +28,193 @@
                 </div>
             </div>
 
-            <div class="row p-5 pb-1 pt-3">
-                <h3 class="mt-0"> Personal Information </h3>
-                <hr class="ms-2 mb-4" style="width: 300px;">
-                <label for="name"> Name </label>
-                <input type="text" id="name" class="ms-2">
-            </div>
+            <form action="../index.php" method="post">
+                <div class="row p-5 pb-1 pt-3">
+                    <h3 class="mt-0"> Personal Information </h3>
+                    <hr class="ms-2 mb-4" style="width: 300px;">
+                    <label for="name"> Name </label>
+                    <input type="text" id="name" class="ms-2" name="name">
+                </div>
 
-            <div class="row p-5 pb-1 pt-4">
-                <label for="email"> Email </label>
-                <input type="text" id="email" class=" ms-2">
-            </div>
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="email"> Email </label>
+                    <input type="text" id="email" class=" ms-2" name="email">
+                </div>
+            
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="class"> Class </label>
+                    <select name="stClass" id="class" class="ms-2" style="width: 80%;">
+                        <option> Select a class </option>
+                        <option value="first"> First Class </option>
+                        <option value="second"> Second Class </option>
+                        <option value="third"> Third Class </option>
+                        <option value="fourth"> Fourth Class </option>
+                    </select>
+                </div>
 
-            <div class="row p-5 pb-1 pt-4">
-                <label for="class"> Class </label>
-                <select name="class" id="cars" class="ms-2" style="width: 80%;">
-                    <option> Select a class </option>
-                    <option value="first"> First Class </option>
-                    <option value="second"> Second Class </option>
-                    <option value="third"> Third Class </option>
-                    <option value="fourth"> Fourth Class </option>
-                </select>
-            </div>
+                <div class="row p-5 pb-1 pt-4 mt-4">
+                    <h3 class="mt-0"> About School </h3>
+                    <hr class="ms-2 mb-4" style="width: 300px;">
+                    <label for="Q1" class="pb-1"> <p style="display: inline; color: #A78295;"> Q1: </p> What are your favorite school subjects or lessons?</label>
+                    <div class="col-4 me-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="math" id="math" name="Q1[]">
+                            <label class="form-check-label q1" for="math">
+                                Math
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check">
+                            <input class="form-check-input q1" type="checkbox" value="english" id="english" name="Q1[]">
+                            <label class="form-check-label" for="english">
+                                English
+                            </label>
+                        </div>
+                    </div>
 
-            <div class="row p-5 pb-1 pt-4 mt-4">
-                <h3 class="mt-0"> About School </h3>
-                <hr class="ms-2 mb-4" style="width: 300px;">
-                <label for="Q1" class="pb-1"> <p style="display: inline; color: #A78295;"> Q1: </p> What are your favorite school subjects or lessons?</label>
-                <div class="col-4 me-5">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="math" id="math">
-                        <label class="form-check-label" for="math">
-                            Math
+                    <div class="col-4 me-5">
+                        <div class="form-check">
+                            <input class="form-check-input q1" type="checkbox" value="spanish" id="spanish" name="Q1[]">
+                            <label class="form-check-label" for="spanish">
+                                Spanish
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check">
+                            <input class="form-check-input q1" type="checkbox" value="geo" id="geo" name="Q1[]">
+                            <label class="form-check-label" for="geo">
+                                Geography
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-4 me-5">
+                        <div class="form-check">
+                            <input class="form-check-input q1" type="checkbox" value="history" id="history" name="Q1[]">
+                            <label class="form-check-label" for="history">
+                                History
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check">
+                            <input class="form-check-input q1" type="checkbox" value="science" id="science" name="Q1[]">
+                            <label class="form-check-label" for="science">
+                                Science
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="Q2" class="pb-1"><p style="display: inline; color: #A78295;"> Q2: </p> How accessible is your teacher for questions and assistance? </label>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q2" type="radio" name="Q2" id="very" value="very">
+                        <label class="form-check-label" for="very">
+                            Very
+                        </label>
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q2" type="radio" name="Q2" id="some" value="somewhat">
+                        <label class="form-check-label" for="some">
+                            Somewhat accessible
+                        </label>
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q2" type="radio" name="Q2" id="not" value="notAccessible">
+                        <label class="form-check-label" for="not">
+                            Not accessible
                         </label>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="english" id="english">
-                        <label class="form-check-label" for="english">
-                            English
+
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="Q3" class="pb-1"><p style="display: inline; color: #A78295;"> Q3: </p> How comfortable are you seeking assistance from classmates? </label>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q3" type="radio" name="Q3" id="veryQ3" value="very">
+                        <label class="form-check-label" for="veryQ3">
+                            Very
+                        </label>
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q3" type="radio" name="Q3" id="someQ3" value="somewhat">
+                        <label class="form-check-label" for="someQ3">
+                            Somewhat comfortable
+                        </label>
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q3" type="radio" name="Q3" id="notQ3" value="notComfortable">
+                        <label class="form-check-label" for="notQ3">
+                            Not comfortable
                         </label>
                     </div>
                 </div>
 
-                <div class="col-4 me-5">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="spanish" id="spanish">
-                        <label class="form-check-label" for="spanish">
-                            Spanish
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="Q4" class="pb-1"><p style="display: inline; color: #A78295;"> Q4: </p> Is the school providing adequate learning resources? </label>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q4" type="radio" name="Q4" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q4" type="radio" name="Q4" id="no" value="no">
+                        <label class="form-check-label" for="no">
+                            No
                         </label>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="geo" id="geo">
-                        <label class="form-check-label" for="geo">
-                            Geography
+            
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="Q5" class="pb-1"><p style="display: inline; color: #A78295;"> Q5: </p> How can we improve or expand on available learning resources? </label>
+                    <input type="text" id="Q5" class="ms-2" name="Q5">
+                </div>
+
+                <div class="row p-5 pb-1 pt-4">
+                    <label for="Q6" class="pb-1"><p style="display: inline; color: #A78295;"> Q6: </p> Which classroom activities do you find the most enjoyable? </label>
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q6" type="checkbox" value="quesion" id="quesion" name="Q6[]">
+                        <label class="form-check-label" for="quesion">
+                            Question of the day.
+                        </label>
+                    </div>
+
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q6" type="checkbox" value="quiz" id="quiz" name="Q6[]">
+                        <label class="form-check-label" for="quiz">
+                            Quiz
+                        </label>
+                    </div>
+
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q6" type="checkbox" value="brainstorm" id="brainstorm" name="Q6[]">
+                        <label class="form-check-label" for="brainstorm">
+                            Brainstorming sessions
+                        </label>
+                    </div>
+                
+                    <div class="form-check ms-3">
+                        <input class="form-check-input q6" type="checkbox" value="extempore" id="extempore" name="Q6[]">
+                        <label class="form-check-label" for="extempore">
+                            Extempore
                         </label>
                     </div>
                 </div>
 
-                <div class="col-4 me-5">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="history" id="history">
-                        <label class="form-check-label" for="history">
-                            History
-                        </label>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="science" id="science">
-                        <label class="form-check-label" for="science">
-                            Science
-                        </label>
+                <div class="row p-5 pb-1 pt-4 mb-3 mt-3">
+                    <div class="col-4">
+                        <a href="page2.html"> <button class="btn btn-light" onclick="saveData()"> Next </button> </a>
+                        <!-- <a href="" class="btn btn-light" role="button">Next</a> -->
                     </div>
                 </div>
             </div>
-
-            <div class="row p-5 pb-1 pt-4">
-                <label for="Q2" class="pb-1"><p style="display: inline; color: #A78295;"> Q2: </p> How accessible is your teacher for questions and assistance? </label>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q2" id="very">
-                    <label class="form-check-label" for="very">
-                        Very
-                    </label>
-                </div>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q2" id="some">
-                    <label class="form-check-label" for="some">
-                        Somewhat accessible
-                    </label>
-                </div>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q2" id="not">
-                    <label class="form-check-label" for="not">
-                        Not accessible
-                    </label>
-                </div>
-            </div>
-
-            <div class="row p-5 pb-1 pt-4">
-                <label for="Q3" class="pb-1"><p style="display: inline; color: #A78295;"> Q3: </p> How comfortable are you seeking assistance from classmates? </label>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q3" id="veryQ3">
-                    <label class="form-check-label" for="veryQ3">
-                        Very
-                    </label>
-                </div>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q3" id="someQ3">
-                    <label class="form-check-label" for="someQ3">
-                        Somewhat comfortable
-                    </label>
-                </div>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q3" id="notQ3">
-                    <label class="form-check-label" for="notQ3">
-                        Not comfortable
-                    </label>
-                </div>
-            </div>
-
-            <div class="row p-5 pb-1 pt-4">
-                <label for="Q4" class="pb-1"><p style="display: inline; color: #A78295;"> Q4: </p> Is the school providing adequate learning resources? </label>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q4" id="yes">
-                    <label class="form-check-label" for="yes">
-                        Yes
-                    </label>
-                </div>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" name="q4" id="no">
-                    <label class="form-check-label" for="no">
-                        No
-                    </label>
-                </div>
-            </div>
-
-            <div class="row p-5 pb-1 pt-4">
-                <label for="Q5" class="pb-1"><p style="display: inline; color: #A78295;"> Q5: </p> How can we improve or expand on available learning resources? </label>
-                <input type="text" id="Q5" class="ms-2">
-            </div>
-
-            <div class="row p-5 pb-1 pt-4">
-                <label for="Q6" class="pb-1"><p style="display: inline; color: #A78295;"> Q6: </p> Which classroom activities do you find the most enjoyable? </label>
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="quesion" id="quesion">
-                    <label class="form-check-label" for="quesion">
-                        Question of the day.
-                    </label>
-                </div>
-
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="quiz" id="quiz">
-                    <label class="form-check-label" for="quiz">
-                        Quiz
-                    </label>
-                </div>
-
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="brainstorm" id="brainstorm">
-                    <label class="form-check-label" for="brainstorm">
-                        Brainstorming sessions
-                    </label>
-                </div>
-
-                <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="extempore" id="extempore">
-                    <label class="form-check-label" for="extempore">
-                        Extempore
-                    </label>
-                </div>
-            </div>
-
-            <div class="row p-5 pb-1 pt-4 mb-3 mt-3">
-                <div class="col-4">
-                    <a href="page2.html" class="btn btn-light" role="button">Next</a>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
-
-    <script src="../SCRIPTS/script.js"></script>
+    
+    <script src="../SCRIPTS/script1.js"></script>
 </body>
 
 </html>

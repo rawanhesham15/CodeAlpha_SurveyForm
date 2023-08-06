@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lalezar&family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 
-<bod>
+<body onload="loadData()">
     <div class="containter text-light">
         <div class="col-4 w-50 cent boxShadow rounded-3 p-2 mb-5" style="background-color: #331D2C;">
             <div class="row p-5 pb-1 pt-2">
@@ -23,66 +23,67 @@
                 </div>
             </div>
 
-            <div class="row p-5 pb-1">
-                <div class="col-10">
+            <form action="../index2.php" method="post">
+                <div class="row p-5 pb-1">
+                    <div class="col-10">
                     <label for="Q7"><p style="display: inline; color: #A78295;"> Q7: </p> How many hours do you spend on homework each day? </label>
                     <div style="display: flex; flex-direction: row;">
-                        <input type="range" min="0" max="24" value="0" class="w-50" id="hoursRange">
+                        <input type="range" min="0" max="24" value="0" class="w-50" id="Q7" name="Q7">
                         <p id="hours" class="ps-3 pt-3"> 0 </p>
                     </div>
                 </div>
             </div>
-
+            
             <div class="row p-5 pb-1 pt-2">
                 <label for="Q8" class="pb-1"><p style="display: inline; color: #A78295;"> Q8: </p> What are your proudest achievements this year? </label>
-                <input type="text" id="Q7" class="ms-2">
+                <input type="text" id="Q8" class="ms-2" name="Q8">
             </div>
             
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q9" class="pb-1"> <p style="display: inline; color: #A78295;"> Q9: </p>What would you like to change about class or the lessons? </label>
-                <input type="text" id="Q8" class="ms-2">
+                <input type="text" id="Q9" class="ms-2" name="Q9">
             </div>
 
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q10" class="pb-1"><p style="display: inline; color: #A78295;"> Q10: </p> What do you like most about school </label>
-                <input type="text" id="Q9" class="ms-2">
+                <input type="text" id="Q10" class="ms-2" name="Q10">
             </div>
 
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q11" class="pb-1"><p style="display: inline; color: #A78295;"> Q11: </p> What Do You Like Least About School </label>
-                <input type="text" id="Q10" class="ms-2">
+                <input type="text" id="Q11" class="ms-2" name="Q11">
             </div>
 
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q12" class="pb-1"><p style="display: inline; color: #A78295;"> Q12: </p> How can we improve or expand on available learning resources? </label>
-                <input type="text" id="Q11" class="ms-2">
+                <input type="text" id="Q12" class="ms-2" name="Q12">
             </div>
             
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q13" class="pb-1"><p style="display: inline; color: #A78295;"> Q13: </p> What do you like to do after school? </label>
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="vidGames" id="vidGames">
+                    <input class="form-check-input q13" type="checkbox" value="vidGames" id="vidGames" name="Q13[]">
                     <label class="form-check-label" for="vidGames">
                         Play Video Games
                     </label>
                 </div>
 
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="sports" id="sports">
+                    <input class="form-check-input q13" type="checkbox" value="sports" id="sports" name="Q13[]">
                     <label class="form-check-label" for="sports">
                         Play Sports
                     </label>
                 </div>
                 
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="youtube" id="youtube">
+                    <input class="form-check-input q13" type="checkbox" value="youtube" id="youtube" name="Q13[]">
                     <label class="form-check-label" for="youtube">
                         Watch Youtube
                     </label>
                 </div>
                 
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="checkbox" value="else" id="else">
+                    <input class="form-check-input q13" type="checkbox" value="else" id="else" name="Q13[]">
                     <label class="form-check-label" for="else">
                         Something Else
                     </label>
@@ -91,43 +92,44 @@
             
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q14" class="pb-1"> <p style="display: inline; color: #A78295;"> Q14: </p>What is your favourite tv show? </label>
-                <input type="text" id="Q13" class="ms-2">
+                <input type="text" id="Q14" class="ms-2" name="Q14">
             </div>
 
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q15" class="pb-1"><p style="display: inline; color: #A78295;"> Q15: </p> What is your favorite sport? </label>
-                <input type="text" id="Q14" class="ms-2">
+                <input type="text" id="Q15" class="ms-2" name="Q15">
             </div>
-
+            
             <div class="row p-5 pb-1 pt-4">
                 <label for="Q16" class="pb-1"><p style="display: inline; color: #A78295;"> Q16: </p> Do you have supportive classmates? </label>
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" value="yes" id="yes" name="Q16">
+                    <input class="form-check-input q16" type="radio" value="yes" id="yes" name="Q16">
                     <label class="form-check-label" for="yes">
                         Yes, extremely supportive
                     </label>
                 </div>
 
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" value="neither" id="neither" name="Q16">
+                    <input class="form-check-input q16" type="radio" value="neither" id="neither" name="Q16">
                     <label class="form-check-label" for="neither">
                         They are neither supportive nor unsupportive
                     </label>
                 </div>
 
                 <div class="form-check ms-3">
-                    <input class="form-check-input" type="radio" value="no" id="no" name="Q16">
+                    <input class="form-check-input q16" type="radio" value="no" id="no" name="Q16">
                     <label class="form-check-label" for="no">
                         No, extremely unsupportive
                     </label>
                 </div>
             </div>
-
+            
             <div class="row p-5 pb-1 pt-4 mb-3 mt-3">
                 <div class="col-4">
-                    <a href="page3.html" class="btn btn-light" role="button">Next</a>
+                    <a href="page3.html"> <button class="btn btn-light" onclick="saveData()"> Next </button> </a>
+                    <!-- <a href="page3.html" class="btn btn-light" role="button">Next</a> -->
                 </div>
-
+                
                 <div class="col-8"">
                     <a href="page1.html" class="btn btn-light" role="button" style="float: right;">Back</a>
                 </div>
@@ -135,7 +137,7 @@
 
         </div>
     </div>
-    <script src="../SCRIPTS/script.js"></script>
+</form>
+    <script src="../SCRIPTS/script2.js"></script>
 </body>
-
 </html>
